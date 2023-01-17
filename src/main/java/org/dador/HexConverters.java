@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 public final class HexConverters {
 
     /**
-     * Private constructor
+     * Private constructor r
      */
     private HexConverters() {
     }
