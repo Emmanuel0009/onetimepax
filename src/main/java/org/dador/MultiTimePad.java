@@ -42,9 +42,23 @@ public class MultiTimePad {
 
         System.out.println();
 
+        System.out.println("/---------------------------------------C0 xor Cj --------------------------------------------/");
+        for(int j = 1 ; j < nbMsg; j++) 
+        {
+	        tmpByteMsg = HexConverters.xorArray( byteArrayMsg[0], byteArrayMsg[j]);
+	        System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+        }
+        System.out.println("/------------------------------------Fin C0 xor Cj---------------------------------------------/");
+		
+        
         key = new byte[msg1.length() / 2];
         // Fill in the key ...
         key[0] = 0 ;
+        key[1] = (byte) 0x50 ;
+        key[2] = (byte) 0xcc;
+        key[3] = (byte) 0xbf ;
+        key[4] = (byte) 0xff ;
+        key[5] = (byte) 0xfc ;
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
